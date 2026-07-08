@@ -1,0 +1,883 @@
+ <!DOCTYPE html>
+<html lang="en" class="" style="height: auto;">
+<style>
+  #top-Nav a.nav-link.active {
+      font-weight: 900;
+      position: relative;
+  }
+  #top-Nav a.nav-link.active:before {
+    content: "";
+    position: absolute;
+    border-bottom: 2px solid var(--primary);
+    width: 33.33%;
+    left: 33.33%;
+    bottom: 0;
+    transition: border-color 0.4s ease;
+  }
+  body.nav-hidden #top-Nav a.nav-link.active:before {
+    border-bottom-color: #fff;
+  }
+</style>
+<head>
+  <style>
+    :root{
+      --bg-img:url('dist/img/no-image-available.png');
+    }
+  </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  	<title>Pasco Resort Management System</title>
+    <link rel="icon" href="dist/img/no-image-available.png" />
+    <!-- Google Font: Source Sans Pro -->
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&amp;display=fallback"> -->
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+    <!-- Ionicons -->
+    <!-- <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"> -->
+    <!-- Tempusdominus Bootstrap 4 -->
+    <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+      <!-- DataTables -->
+  <link rel="stylesheet" href="plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <link rel="stylesheet" href="plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+   <!-- Select2 -->
+  <link rel="stylesheet" href="plugins/select2/css/select2.min.css">
+  <link rel="stylesheet" href="plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <!-- JQVMap -->
+    <link rel="stylesheet" href="plugins/jqvmap/jqvmap.min.css">
+    <!-- fullCalendar -->
+    <link rel="stylesheet" href="plugins/fullcalendar/main.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="dist/css/adminlte.css">
+    <link rel="stylesheet" href="http://localhost:8888/resort/assets/css/styles.css">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
+    <!-- summernote -->
+    <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
+     <!-- SweetAlert2 -->
+  <link rel="stylesheet" href="plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+    <!-- Custom Style Redesign -->
+    <link rel="stylesheet" href="dist/css/custom.css">
+    <style type="text/css">/* Chart.js */
+      @keyframes chartjs-render-animation{from{opacity:.99}to{opacity:1}}.chartjs-render-monitor{animation:chartjs-render-animation 1ms}.chartjs-size-monitor,.chartjs-size-monitor-expand,.chartjs-size-monitor-shrink{position:absolute;direction:ltr;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1}.chartjs-size-monitor-expand>div{position:absolute;width:1000000px;height:1000000px;left:0;top:0}.chartjs-size-monitor-shrink>div{position:absolute;width:200%;height:200%;left:0;top:0}
+    </style>
+
+     <!-- jQuery -->
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+    <!-- SweetAlert2 -->
+    <script src="plugins/sweetalert2/sweetalert2.min.js"></script>
+    <!-- Toastr -->
+    <script src="plugins/toastr/toastr.min.js"></script>
+    <script>
+        var _base_url_ = 'http://localhost:8888/resort/';
+    </script>
+    <script src="dist/js/script.js"></script>
+    <style>
+    #main-header{
+        position:relative;
+        background: rgb(0,0,0)!important;
+        background: radial-gradient(circle, rgba(0,0,0,0.48503151260504207) 22%, rgba(0,0,0,0.39539565826330536) 49%, rgba(0,212,255,0) 100%)!important;
+    }
+    #main-header:before{
+        content:"";
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        background-image:url(uploads/cover.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: drop-shadow(0px 7px 6px black);
+        z-index:-1;
+    }
+
+ </style>
+  </head>  <body class="layout-top-nav layout-fixed layout-navbar-fixed page-home" style="height: auto;">
+    <div class="wrapper">
+     <nav class="main-header navbar navbar-expand-lg navbar-light border-0 main-navbar" id="top-Nav">
+  <div class="container">
+    <a href="index.html" class="navbar-brand">
+      <img src="dist/img/no-image-available.png" alt="Site Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span>Pasco Resort</span>
+    </a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link active">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a href="rooms.html" class="nav-link ">Cuartos</a>
+        </li>
+        <li class="nav-item">
+          <a href="activities.html" class="nav-link ">Atracciones</a>
+        </li>
+        <li class="nav-item">
+          <a href="about.html" class="nav-link ">Nosotros</a>
+        </li>
+        <li class="nav-item">
+          <a href="contact_us.html" class="nav-link ">Contacto</a>
+        </li>
+              </ul>
+      <div class="d-flex align-items-center gap-2 nav-cta-wrap">
+                  <a href="rooms.html" class="btn btn-nav-cta"><i class="fas fa-calendar-check mr-1"></i> Reservar</a>
+          <a href="./admin" class="nav-admin-link"><i class="fa fa-user-shield"></i></a>
+              </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+$(function(){
+  var $body = $('body');
+  var scrollThreshold = $('.hero-carousel').length
+    ? $('.hero-carousel').outerHeight() * 0.6
+    : 120;
+
+  function updateNav() {
+    if ($(window).scrollTop() > scrollThreshold) {
+      $body.addClass('nav-hidden');
+    } else {
+      $body.removeClass('nav-hidden');
+    }
+  }
+
+  $(window).on('scroll', updateNav);
+  updateNav();
+});
+</script>         
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper" style="">
+        <!-- Main content -->
+        <section class="content ">
+            <!-- ===== HERO CAROUSEL ===== -->
+<div class="hero-carousel" id="heroCarousel">
+    <div class="carousel-slide active">
+        <img src="uploads/cerro_de_pasco/carousel_lobby.png" alt="Lobby del Resort">
+    </div>
+    <div class="carousel-slide">
+        <img src="uploads/cerro_de_pasco/carousel_exterior.png" alt="Fachada del Resort">
+    </div>
+    <div class="carousel-slide">
+        <img src="uploads/cerro_de_pasco/carousel_restaurant.png" alt="Restaurante">
+    </div>
+    <div class="carousel-slide">
+        <img src="uploads/cerro_de_pasco/carousel_pool.png" alt="Piscina y Spa">
+    </div>
+    <div class="carousel-overlay"></div>
+    <div class="carousel-caption-custom">
+        <h1 id="carousel-title">Pasco Resort Management System</h1>
+        <p id="carousel-subtitle">Calidez, Tradición y Confort en la Altura de Cerro de Pasco</p>
+        <a href="rooms.html" class="btn-cta" id="carousel-cta">Reservar Ahora</a>
+    </div>
+    <div class="carousel-dots">
+        <span class="active" data-index="0"></span>
+        <span data-index="1"></span>
+        <span data-index="2"></span>
+        <span data-index="3"></span>
+    </div>
+</div>
+
+<!-- ===== BOOKING BAR (after hero) ===== -->
+<div class="booking-bar" style="box-shadow: var(--shadow-md);">
+    <form action="rooms.html" method="GET">
+        <input type="hidden" name="page" value="rooms">
+        <div class="booking-input-group">
+            <label for="check_in" style="margin: 0; font-family: var(--font-title); font-size: 0.9rem; font-weight: bold; color: var(--primary);">LLEGADA:</label>
+            <input type="date" id="check_in" name="check_in" class="booking-input" min="2026-07-08" value="2026-07-08" required>
+        </div>
+        <div class="booking-input-group">
+            <label for="check_out" style="margin: 0; font-family: var(--font-title); font-size: 0.9rem; font-weight: bold; color: var(--primary);">SALIDA:</label>
+            <input type="date" id="check_out" name="check_out" class="booking-input" min="2026-07-09" value="2026-07-10" required>
+        </div>
+        <button type="submit" class="booking-btn"><i class="fas fa-search mr-2"></i>Buscar Disponibilidad</button>
+    </form>
+</div>
+
+<!-- ===== STATS STRIP ===== -->
+<section class="stats-strip scroll-reveal">
+    <div class="container">
+        <div class="row">
+            <div class="col-6 col-lg-3 stat-item">
+                <div class="stat-number">15+</div>
+                <div class="stat-label">Años de Experiencia</div>
+            </div>
+            <div class="col-6 col-lg-3 stat-item">
+                <div class="stat-number">10k+</div>
+                <div class="stat-label">Huéspedes Felices</div>
+            </div>
+            <div class="col-6 col-lg-3 stat-item">
+                <div class="stat-number">28</div>
+                <div class="stat-label">Habitaciones Premium</div>
+            </div>
+            <div class="col-6 col-lg-3 stat-item">
+                <div class="stat-number">4.8</div>
+                <div class="stat-label">Calificación ★</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== SERVICIOS DESTACADOS ===== -->
+<section class="py-5 scroll-reveal" id="services-section" style="background: var(--bg-section);">
+    <div class="container text-center">
+        <span class="section-subtitle">Lo Que Ofrecemos</span>
+        <h2 class="section-title">Nuestros Servicios</h2>
+        <hr class="section-divider mb-5">
+        <div class="row mt-4">
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="service-card h-100">
+                    <div class="service-icon"><i class="fas fa-bed"></i></div>
+                    <h5 style="font-weight: 700; color: var(--text-heading);">Habitaciones Premium</h5>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">Habitaciones y suites equipadas con calefacción hidrónica individual, edredones térmicos de pluma de ganso, sábanas de 400 hilos y ventanas termoacústicas para garantizar un descanso cálido, silencioso y reconfortante frente a la cordillera.</p>
+                    <a href="rooms.html" class="btn-cta-accent mt-2" style="font-size: 0.8rem; padding: 8px 20px;">Ver Habitaciones</a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="service-card h-100">
+                    <div class="service-icon"><i class="fas fa-utensils"></i></div>
+                    <h5 style="font-weight: 700; color: var(--text-heading);">Restaurante El Fogón</h5>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">Cocina de autor que rinde homenaje a los insumos andinos. Disfrute de nuestra tradicional Pachamanca de tres carnes enterrada bajo tierra caliente, trucha arcoíris ahumada de lagunas locales y cócteles artesanos perfumados con muña y pisco.</p>
+                    <a href="activities.html" class="btn-cta-accent mt-2" style="font-size: 0.8rem; padding: 8px 20px;">Carta y Sabores</a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="service-card h-100">
+                    <div class="service-icon"><i class="fas fa-spa"></i></div>
+                    <h5 style="font-weight: 700; color: var(--text-heading);">Spa & Termalismo</h5>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">Un santuario de relajación a gran altura. Rituales corporales con piedras volcánicas, tratamientos faciales nutritivos para el clima de montaña y baños de vapor infusionados con eucalipto silvestre y hojas aromáticas de muña.</p>
+                    <a href="activities.html" class="btn-cta-accent mt-2" style="font-size: 0.8rem; padding: 8px 20px;">Ver Rituales</a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="service-card h-100">
+                    <div class="service-icon"><i class="fas fa-mountain"></i></div>
+                    <h5 style="font-weight: 700; color: var(--text-heading);">Excursiones Guiadas</h5>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">Aventuras privadas y personalizadas. Explore el Santuario Nacional de Huayllay y sus formaciones geológicas monumentales, relájese en las termas minero-medicinales de La Calera o camine por antiguos senderos mineros.</p>
+                    <a href="activities.html" class="btn-cta-accent mt-2" style="font-size: 0.8rem; padding: 8px 20px;">Ver Excursiones</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== NOSOTROS PREVIEW ===== -->
+<section class="container py-5 scroll-reveal" id="about-preview">
+    <div class="row align-items-center">
+        <div class="col-md-6 mb-4 mb-md-0">
+            <span class="section-subtitle">Conócenos</span>
+            <h2 class="section-title" style="font-size: 2.2rem; text-align: left;">Un Refugio de Confort Absoluto en las Alturas del Perú</h2>
+            <hr class="section-divider" style="margin: 15px 0 20px; text-align: left; margin-left: 0;">
+            <p style="font-size: 1.05rem; line-height: 1.9; color: var(--text-muted);">
+                Erigido en la histórica y mística ciudad de <strong style="color: var(--text-heading);">Cerro de Pasco</strong>, a más de 4,300 metros sobre el nivel del mar, <strong style="color: var(--primary);">Pasco Resort Management System</strong> es el único resort de lujo diseñado para brindar un oasis de calidez y hospitalidad andina. 
+            </p>
+            <p style="font-size: 1.05rem; line-height: 1.9; color: var(--text-muted); margin-top: 15px;">
+                Nuestras instalaciones fusionan la piedra de cantería local y vigas de madera tratada con tecnología moderna de calefacción centralizada. Un lugar donde el frío de la altitud se desvanece frente a nuestras chimeneas siempre encendidas y un servicio personalizado que cuida cada detalle de su aclimatación y descanso.
+            </p>
+            <a href="about.html" class="btn-cta mt-3" style="font-size: 0.85rem; padding: 12px 28px;">Nuestra Historia</a>
+        </div>
+        <div class="col-md-6 text-center">
+            <img src="uploads/cerro_de_pasco/about_resort.png" class="img-fluid rounded" alt="Lobby del Resort" style="border-radius: var(--radius) !important; box-shadow: var(--shadow-lg); max-height: 420px; width: 100%; object-fit: cover;">
+        </div>
+    </div>
+</section>
+
+<!-- ===== OFERTAS ESPECIALES ===== -->
+<section class="py-5 scroll-reveal" id="offers-section">
+    <div class="container text-center">
+        <span class="section-subtitle">Paquetes Exclusivos</span>
+        <h2 class="section-title">Ofertas Especiales</h2>
+        <hr class="section-divider mb-5">
+        <div class="row mt-4">
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="offer-card h-100">
+                    <div class="offer-img-wrapper">
+                        <img src="uploads/cerro_de_pasco/carousel_restaurant.png" alt="Escapada Romántica">
+                    </div>
+                    <div class="offer-body">
+                        <span class="offer-tag">Más Vendido</span>
+                        <h4 style="font-family: var(--font-title); font-weight: 700; color: var(--text-heading);">Escapada Romántica</h4>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 15px;">Cena gourmet para dos, masaje de parejas y habitación presidencial con vista a la cordillera.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="offer-price">S/. 480 <small>/ noche</small></span>
+                            <a href="rooms.html" class="btn-cta-accent" style="font-size: 0.8rem; padding: 8px 18px;">Reservar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="offer-card h-100">
+                    <div class="offer-img-wrapper">
+                        <img src="uploads/cerro_de_pasco/activity_huayllay.png" alt="Aventura Andina">
+                    </div>
+                    <div class="offer-body">
+                        <span class="offer-tag" style="background: linear-gradient(135deg, #1E3A8A, #3B82F6);">Aventura</span>
+                        <h4 style="font-family: var(--font-title); font-weight: 700; color: var(--text-heading);">Aventura Andina</h4>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 15px;">Excursión al Bosque de Piedras de Huayllay, visita a las Termas de Calera y almuerzo típico incluido.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="offer-price">S/. 320 <small>/ persona</small></span>
+                            <a href="activities.html" class="btn-cta-accent" style="font-size: 0.8rem; padding: 8px 18px;">Ver Más</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12 mb-4">
+                <div class="offer-card h-100">
+                    <div class="offer-img-wrapper">
+                        <img src="uploads/cerro_de_pasco/carousel_pool.png" alt="Relax Total">
+                    </div>
+                    <div class="offer-body">
+                        <span class="offer-tag" style="background: linear-gradient(135deg, #059669, #10B981);">Bienestar</span>
+                        <h4 style="font-family: var(--font-title); font-weight: 700; color: var(--text-heading);">Relax Total</h4>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 15px;">Paquete de spa con acceso a piscina termal, sauna, masaje descontracturante y té de coca al atardecer.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="offer-price">S/. 260 <small>/ persona</small></span>
+                            <a href="activities.html" class="btn-cta-accent" style="font-size: 0.8rem; padding: 8px 18px;">Reservar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== TESTIMONIOS ===== -->
+<section class="py-5 scroll-reveal" id="testimonials-section" style="background: var(--bg-section);">
+    <div class="container text-center">
+        <span class="section-subtitle">Opiniones</span>
+        <h2 class="section-title">Lo Que Dicen Nuestros Huéspedes</h2>
+        <hr class="section-divider mb-5">
+        <div class="row mt-4">
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="testimonial-card h-100">
+                    <i class="fas fa-quote-left quote-icon"></i>
+                    <div class="testimonial-stars mb-3 mt-2">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; font-style: italic;">"La mejor experiencia en Cerro de Pasco. Las habitaciones son increíblemente acogedoras y la atención del personal es de primera clase. Volveremos sin duda."</p>
+                    <div class="d-flex align-items-center mt-3">
+                        <div class="rounded-circle d-flex align-items-center justify-content-center mr-3" style="width: 50px; height: 50px; background: var(--primary-light); color: var(--primary); font-weight: 700; font-size: 1.2rem;">MC</div>
+                        <div class="text-left">
+                            <strong style="color: var(--text-heading);">María Campos</strong>
+                            <p class="mb-0" style="font-size: 0.8rem; color: var(--text-muted);">Lima, Perú</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="testimonial-card h-100">
+                    <i class="fas fa-quote-left quote-icon"></i>
+                    <div class="testimonial-stars mb-3 mt-2">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; font-style: italic;">"Increíble la vista desde la habitación presidencial. El restaurante tiene la mejor pachamanca que he probado. Un hotel con alma y tradición."</p>
+                    <div class="d-flex align-items-center mt-3">
+                        <div class="rounded-circle d-flex align-items-center justify-content-center mr-3" style="width: 50px; height: 50px; background: var(--primary-light); color: var(--primary); font-weight: 700; font-size: 1.2rem;">CR</div>
+                        <div class="text-left">
+                            <strong style="color: var(--text-heading);">Carlos Ríos</strong>
+                            <p class="mb-0" style="font-size: 0.8rem; color: var(--text-muted);">Huancayo, Perú</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12 mb-4">
+                <div class="testimonial-card h-100">
+                    <i class="fas fa-quote-left quote-icon"></i>
+                    <div class="testimonial-stars mb-3 mt-2">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                    </div>
+                    <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; font-style: italic;">"Perfecto para desconectarse del estrés. La excursión al Bosque de Piedras fue espectacular. Muy recomendado para parejas y familias."</p>
+                    <div class="d-flex align-items-center mt-3">
+                        <div class="rounded-circle d-flex align-items-center justify-content-center mr-3" style="width: 50px; height: 50px; background: var(--primary-light); color: var(--primary); font-weight: 700; font-size: 1.2rem;">AL</div>
+                        <div class="text-left">
+                            <strong style="color: var(--text-heading);">Ana Laura Pérez</strong>
+                            <p class="mb-0" style="font-size: 0.8rem; color: var(--text-muted);">Arequipa, Perú</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== POR QUÉ RESERVAR CON NOSOTROS ===== -->
+<section class="py-5 scroll-reveal" id="trust-section">
+    <div class="container text-center">
+        <span class="section-subtitle">Confianza</span>
+        <h2 class="section-title">¿Por Qué Reservar Con Nosotros?</h2>
+        <hr class="section-divider mb-5">
+        <div class="row mt-4">
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="trust-item h-100">
+                    <div class="trust-icon"><i class="fas fa-lock"></i></div>
+                    <h5>Pago Seguro</h5>
+                    <p>Tus datos bancarios están protegidos con encriptación SSL de alta seguridad.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="trust-item h-100">
+                    <div class="trust-icon"><i class="fas fa-clock"></i></div>
+                    <h5>Check-in 24/7</h5>
+                    <p>Recepción abierta las 24 horas para que llegues a la hora que prefieras.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="trust-item h-100">
+                    <div class="trust-icon"><i class="fas fa-badge-check"></i></div>
+                    <h5>Mejor Precio</h5>
+                    <p>Te garantizamos la tarifa más baja disponible. Si encuentras un precio menor, lo igualamos.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="trust-item h-100">
+                    <div class="trust-icon"><i class="fas fa-undo-alt"></i></div>
+                    <h5>Cancelación Gratis</h5>
+                    <p>Puedes cancelar sin costo hasta 48 horas antes de tu llegada.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== UBICACIÓN ===== -->
+<section class="container py-5 scroll-reveal" id="location-section">
+    <div class="text-center mb-5">
+        <span class="section-subtitle">Encuéntranos</span>
+        <h2 class="section-title">Nuestra Ubicación</h2>
+        <hr class="section-divider">
+    </div>
+    <div class="row align-items-stretch">
+        <div class="col-lg-7 mb-4 mb-lg-0">
+            <div class="location-map h-100">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31209.07!2d-76.2633!3d-10.6867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x910765d36fa9a00f%3A0x68e3fd14a61c7e89!2sCerro%20de%20Pasco!5e0!3m2!1ses!2spe!4v1700000000000!5m2!1ses!2spe"
+                    width="100%" height="100%" style="border:0; min-height: 350px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+        <div class="col-lg-5">
+            <div class="location-info-card h-100">
+                <h4 style="color: var(--text-heading); font-weight: 700; margin-bottom: 25px;"><i class="fas fa-map-marker-alt" style="color: var(--primary); margin-right: 10px;"></i> ¿Cómo Llegar?</h4>
+                <ul class="list-unstyled" style="font-size: 1rem; line-height: 2.2;">
+                    <li class="d-flex align-items-start mb-3">
+                        <i class="fas fa-location-arrow mt-1" style="color: var(--primary); width: 25px;"></i>
+                        <span><strong>Dirección:</strong> Cerro de Pasco, Pasco, Perú</span>
+                    </li>
+                    <li class="d-flex align-items-start mb-3">
+                        <i class="fas fa-phone-alt mt-1" style="color: var(--primary); width: 25px;"></i>
+                        <span><strong>Teléfono:</strong> +1 (555) 019-9234</span>
+                    </li>
+                    <li class="d-flex align-items-start mb-3">
+                        <i class="fas fa-envelope mt-1" style="color: var(--primary); width: 25px;"></i>
+                        <span><strong>Email:</strong> contact@paradiseresort.com</span>
+                    </li>
+                    <li class="d-flex align-items-start mb-3">
+                        <i class="fas fa-clock mt-1" style="color: var(--primary); width: 25px;"></i>
+                        <span><strong>Recepción:</strong> 24 horas, los 7 días</span>
+                    </li>
+                </ul>
+                <a href="contact_us.html" class="btn-cta mt-3" style="font-size: 0.85rem; padding: 10px 25px;">Contáctanos</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CTA FINAL ===== -->
+<section class="cta-section scroll-reveal">
+    <div class="container">
+        <h2>¿Listo para tu Próxima Aventura?</h2>
+        <p>Descubre la magia de Cerro de Pasco y vive una experiencia inolvidable en los Andes peruanos.</p>
+        <a href="rooms.html" class="btn-cta" style="display: inline-block; background: linear-gradient(135deg, #A16207, #CA8A04); color: #fff; border: none; padding: 16px 45px; font-weight: 700; border-radius: 50px; cursor: pointer; transition: all 0.3s ease; font-family: var(--font-body); text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; text-decoration: none; box-shadow: 0 6px 25px rgba(161,98,7,0.4);">Reservar Ahora</a>
+    </div>
+</section>
+
+<!-- ===== FACEBOOK & REDES SOCIALES ===== -->
+<section class="py-5 scroll-reveal" id="social-section" style="background: var(--bg-section);">
+    <div class="container">
+        <div class="text-center mb-5">
+            <span class="section-subtitle">Síguenos</span>
+            <h2 class="section-title">Conéctate Con Nosotros</h2>
+            <hr class="section-divider">
+        </div>
+        <div class="row align-items-center">
+            <div class="col-lg-7 mb-4 mb-lg-0">
+                <div class="fb-panel">
+                    <i class="fab fa-facebook"></i>
+                    <h4 style="color: var(--text-heading); font-weight: 700;">Síguenos en Facebook</h4>
+                    <p style="color: var(--text-muted); max-width: 400px; margin: 0 auto 20px;">Mantente al día con nuestras promociones, eventos especiales y novedades del resort.</p>
+                    <a href="#" class="btn-cta" style="background: linear-gradient(135deg, #1877F2, #42a5f5); box-shadow: 0 4px 15px rgba(24,119,242,0.35); font-size: 0.85rem; padding: 12px 28px;">
+                        <i class="fab fa-facebook-f mr-2"></i> Visitar Página
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-5 text-center">
+                <h5 style="color: var(--text-heading); font-weight: 700; margin-bottom: 25px;">Nuestras Redes Sociales</h5>
+                <div class="social-icons justify-content-center" style="display: flex;">
+                    <a href="#" class="social-icon facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon tiktok" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" class="social-icon whatsapp" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+                <p class="mt-4" style="color: var(--text-muted); font-size: 0.9rem;">Comparte tu experiencia con nosotros usando<br><strong style="color: var(--primary);">#ParadiseResortPasco</strong></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CAROUSEL & SCROLL REVEAL SCRIPT ===== -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // Carousel
+    const slides = document.querySelectorAll("#heroCarousel .carousel-slide");
+    const dots = document.querySelectorAll("#heroCarousel .carousel-dots span");
+    const titles = [
+        "Pasco Resort Management System",
+        "Tu Refugio en la Altura",
+        "Gastronomía de los Andes",
+        "Relax en la Cordillera"
+    ];
+    const subtitles = [
+        "Calidez, Tradición y Confort en la Altura de Cerro de Pasco",
+        "Descubre la magia de los Andes en nuestras instalaciones",
+        "Sabores auténticos preparados con ingredientes locales",
+        "Desconéctate del mundo y renueva tu energía"
+    ];
+    const ctas = [
+        { text: "Reservar Ahora", link: "http://localhost:8888/resort/?page=rooms" },
+        { text: "Ver Habitaciones", link: "http://localhost:8888/resort/?page=rooms" },
+        { text: "Descubrir Más", link: "http://localhost:8888/resort/?page=activities" },
+        { text: "Ver Servicios", link: "http://localhost:8888/resort/?page=activities" }
+    ];
+    let current = 0;
+
+    function goToSlide(n) {
+        slides[current].classList.remove("active");
+        dots[current].classList.remove("active");
+        current = n;
+        slides[current].classList.add("active");
+        dots[current].classList.add("active");
+        document.getElementById("carousel-title").textContent = titles[current];
+        document.getElementById("carousel-subtitle").textContent = subtitles[current];
+        const ctaEl = document.getElementById("carousel-cta");
+        ctaEl.textContent = ctas[current].text;
+        ctaEl.href = ctas[current].link;
+    }
+
+    dots.forEach(dot => {
+        dot.addEventListener("click", function() {
+            goToSlide(parseInt(this.dataset.index));
+        });
+    });
+
+    setInterval(function() {
+        goToSlide((current + 1) % slides.length);
+    }, 5000);
+
+    // Scroll Reveal
+    const revealEls = document.querySelectorAll(".scroll-reveal");
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+    revealEls.forEach(el => observer.observe(el));
+});
+</script>        </section>
+        <!-- /.content -->
+  <!-- Modals con Glassmorphism -->
+  <div class="modal fade" id="confirm_modal" role='dialog'>
+    <div class="modal-dialog modal-md modal-dialog-centered" role="document">
+      <div class="modal-content glass-modal">
+        <div class="modal-header">
+        <h5 class="modal-title">Confirmación</h5>
+      </div>
+      <div class="modal-body">
+        <div id="delete_content"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" id='confirm' onclick="">Continuar</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+      </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="uni_modal" role='dialog'>
+    <div class="modal-dialog modal-md modal-dialog-centered" role="document">
+      <div class="modal-content glass-modal">
+        <div class="modal-header">
+        <h5 class="modal-title"></h5>
+      </div>
+      <div class="modal-body">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" id='submit' onclick="$('#uni_modal form').submit()">Guardar</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+      </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="uni_modal_right" role='dialog'>
+    <div class="modal-dialog modal-full-height modal-md" role="document">
+      <div class="modal-content glass-modal">
+        <div class="modal-header">
+        <h5 class="modal-title"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span class="fa fa-arrow-right"></span>
+        </button>
+      </div>
+      <div class="modal-body">
+      </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="viewer_modal" role='dialog'>
+    <div class="modal-dialog modal-md" role="document">
+      <div class="modal-content glass-modal-dark">
+              <button type="button" class="btn-close" data-dismiss="modal"><span class="fa fa-times"></span></button>
+              <img src="" alt="">
+      </div>
+    </div>
+  </div>
+      </div>
+      <!-- /.content-wrapper -->
+      <script>
+  $(document).ready(function(){
+    $('.list-group').each(function(){
+      if(String($(this).html()).trim() == ""){
+        $(this).html("")
+      }
+    })
+    
+     window.viewer_modal = function($src = ''){
+      start_loader()
+      var t = $src.split('.')
+      t = t[1]
+      if(t =='mp4'){
+        var view = $("<video src='"+$src+"' controls autoplay></video>")
+      }else{
+        var view = $("<img src='"+$src+"' />")
+      }
+      $('#viewer_modal .modal-content video,#viewer_modal .modal-content img').remove()
+      $('#viewer_modal .modal-content').append(view)
+      $('#viewer_modal').modal({
+              show:true,
+              backdrop:'static',
+              keyboard:false,
+              focus:true
+            })
+            end_loader()  
+
+  }
+    window.uni_modal = function($title = '' , $url='',$size=""){
+        start_loader()
+        $.ajax({
+            url:$url,
+            error:err=>{
+                console.log()
+                alert("An error occured")
+            },
+            success:function(resp){
+                if(resp){
+                    $('#uni_modal .modal-title').html($title)
+                    $('#uni_modal .modal-body').html(resp)
+                    if($size != ''){
+                        $('#uni_modal .modal-dialog').addClass($size+'  modal-dialog-centered')
+                    }else{
+                        $('#uni_modal .modal-dialog').removeAttr("class").addClass("modal-dialog modal-md modal-dialog-centered")
+                    }
+                    $('#uni_modal').modal({
+                      show:true,
+                      backdrop:'static',
+                      keyboard:false,
+                      focus:true
+                    })
+                    end_loader()
+                }
+            }
+        })
+    }
+    window._conf = function($msg='',$func='',$params = []){
+       $('#confirm_modal #confirm').attr('onclick',$func+"("+$params.join(',')+")")
+       $('#confirm_modal .modal-body').html($msg)
+       $('#confirm_modal').modal('show')
+    }
+  })
+</script>
+<!-- ===== SINGLE PUBLIC FOOTER for ALL pages ===== -->
+<footer class="main-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="d-flex align-items-center mb-3">
+                    <img src="dist/img/no-image-available.png" alt="Logo" style="height: 50px; width: 50px; object-fit: cover; border-radius: 50%; margin-right: 12px; border: 2px solid rgba(251,191,36,0.3);">
+                    <h5 class="mb-0" style="font-size: 1.2rem; color: #fff;">Pasco Resort Management System</h5>
+                </div>
+                <p style="font-size: 0.9rem; line-height: 1.8; color: rgba(255,255,255,0.6);">
+                    Tu refugio exclusivo en la altura de Cerro de Pasco. Ofrecemos calidez, tradición y confort con los más altos estándares de hospitalidad andina.
+                </p>
+                <div class="mt-3 d-flex" style="gap: 8px;">
+                    <a href="#" class="social-icon facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon tiktok" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" class="social-icon whatsapp" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h5>Enlaces</h5>
+                <ul class="pl-0 footer-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="rooms.html">Habitaciones</a></li>
+                    <li><a href="activities.html">Atracciones</a></li>
+                    <li><a href="about.html">Nosotros</a></li>
+                    <li><a href="contact_us.html">Contacto</a></li>
+                </ul>
+                <h5 class="mt-4" style="font-size: 0.9rem;">Servicios</h5>
+                <ul class="pl-0 footer-links">
+                    <li><a href="rooms.html">Alojamiento</a></li>
+                    <li><a href="activities.html">Restaurante</a></li>
+                    <li><a href="activities.html">Spa & Bienestar</a></li>
+                    <li><a href="activities.html">Excursiones</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <h5>Contacto</h5>
+                <ul class="pl-0 footer-contact">
+                    <li><i class="fas fa-map-marker-alt"></i> <span>123 Ocean Drive, Sunny Beach, FL 33139</span></li>
+                    <li><i class="fas fa-phone-alt"></i> <span>+1 (555) 019-9234</span></li>
+                    <li><i class="fas fa-envelope"></i> <span>contact@paradiseresort.com</span></li>
+                    <li><i class="fab fa-whatsapp"></i> <span>+1 (555) 019-9234</span></li>
+                </ul>
+                <h5 class="mt-4" style="font-size: 0.9rem;">Horario de Atención</h5>
+                <ul class="pl-0 footer-hours">
+                    <li><span>Recepción:</span> <span class="float-right">24 horas</span></li>
+                    <li><span>Restaurante:</span> <span class="float-right">7:00 - 22:00</span></li>
+                    <li><span>Spa:</span> <span class="float-right">9:00 - 20:00</span></li>
+                    <li><span>Check-in / Check-out:</span> <span class="float-right">15:00 / 12:00</span></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <h5>Reservaciones</h5>
+                <p style="font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.8;">
+                    ¿Listo para vivir la experiencia andina? Reserva directamente y obtén las mejores tarifas garantizadas.
+                </p>
+                <a href="rooms.html" class="btn-accent" style="font-size:0.85rem;padding:10px 24px;display:inline-block;text-decoration:none;">
+                    <i class="fas fa-calendar-check mr-1"></i> Reservar Ahora
+                </a>
+                <div class="mt-4 p-3" style="background: rgba(255,255,255,0.05); border-radius: 8px; border: 1px solid rgba(255,255,255,0.08);">
+                    <p style="font-size: 0.8rem; color: rgba(255,255,255,0.5); margin: 0; line-height: 1.6;">
+                        <i class="fas fa-shield-alt" style="color: #A16207; margin-right: 6px;"></i>
+                        Pago 100% seguro con encriptación SSL
+                    </p>
+                    <div class="mt-2 d-flex" style="gap: 8px;">
+                        <span style="font-size: 1.4rem; color: rgba(255,255,255,0.3);"><i class="fab fa-cc-visa"></i></span>
+                        <span style="font-size: 1.4rem; color: rgba(255,255,255,0.3);"><i class="fab fa-cc-mastercard"></i></span>
+                        <span style="font-size: 1.4rem; color: rgba(255,255,255,0.3);"><i class="fab fa-cc-amex"></i></span>
+                        <span style="font-size: 1.4rem; color: rgba(255,255,255,0.3);"><i class="fab fa-cc-paypal"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="row align-items-center">
+                <div class="col-md-4 text-center text-md-left mb-2 mb-md-0">
+                    &copy; 2026 Pasco Resort Management System. Todos los derechos reservados. Desarrollado por AltumTech.
+                </div>
+                <div class="col-md-4 text-center mb-2 mb-md-0">
+                    <a href="#" style="color: rgba(255,255,255,0.4); font-size: 0.8rem; margin: 0 8px;">Términos</a>
+                    <span style="color: rgba(255,255,255,0.2);">|</span>
+                    <a href="#" style="color: rgba(255,255,255,0.4); font-size: 0.8rem; margin: 0 8px;">Privacidad</a>
+                    <span style="color: rgba(255,255,255,0.2);">|</span>
+                    <a href="#" style="color: rgba(255,255,255,0.4); font-size: 0.8rem; margin: 0 8px;">Cookies</a>
+                </div>
+                <div class="col-md-4 text-center text-md-right">
+                    <small style="color: rgba(255,255,255,0.35); font-size: 0.8rem;">
+                        Esta página fue hecha por AltumTech, derechos reservados.
+                    </small>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+    </div>
+    <!-- ./wrapper -->
+<div id="libraries">
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+      $.widget.bridge('uibutton', $.ui.button)
+    </script>
+    <!-- Bootstrap 4 -->
+    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- ChartJS -->
+    <script src="plugins/chart.js/Chart.min.js"></script>
+    <!-- Sparkline -->
+    <script src="plugins/sparklines/sparkline.js"></script>
+    <!-- Select2 -->
+    <script src="plugins/select2/js/select2.full.min.js"></script>
+    <!-- JQVMap -->
+    <script src="plugins/jqvmap/jquery.vmap.min.js"></script>
+    <script src="plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+    <!-- jQuery Knob Chart -->
+    <script src="plugins/jquery-knob/jquery.knob.min.js"></script>
+    <!-- daterangepicker -->
+    <script src="plugins/moment/moment.min.js"></script>
+    <script src="plugins/daterangepicker/daterangepicker.js"></script>
+    <!-- Tempusdominus Bootstrap 4 -->
+    <script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+    <!-- Summernote -->
+    <script src="plugins/summernote/summernote-bs4.min.js"></script>
+    <script src="plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+    <script src="plugins/moment/moment.min.js"></script>
+    <script src="plugins/fullcalendar/main.js"></script>
+    <!-- overlayScrollbars -->
+    <!-- <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script> -->
+    <!-- AdminLTE App -->
+    <script src="dist/js/adminlte.js"></script>
+  </div>   
+    <div class="daterangepicker ltr show-ranges opensright">
+      <div class="ranges">
+        <ul>
+          <li data-range-key="Today">Today</li>
+          <li data-range-key="Yesterday">Yesterday</li>
+          <li data-range-key="Last 7 Days">Last 7 Days</li>
+          <li data-range-key="Last 30 Days">Last 30 Days</li>
+          <li data-range-key="This Month">This Month</li>
+          <li data-range-key="Last Month">Last Month</li>
+          <li data-range-key="Custom Range">Custom Range</li>
+        </ul>
+      </div>
+      <div class="drp-calendar left">
+        <div class="calendar-table"></div>
+        <div class="calendar-time" style="display: none;"></div>
+      </div>
+      <div class="drp-calendar right">
+        <div class="calendar-table"></div>
+        <div class="calendar-time" style="display: none;"></div>
+      </div>
+      <div class="drp-buttons"><span class="drp-selected"></span><button class="cancelBtn btn btn-sm btn-default" type="button">Cancel</button><button class="applyBtn btn btn-sm btn-primary" disabled="disabled" type="button">Apply</button> </div>
+    </div>
+    <div class="jqvmap-label" style="display: none; left: 1093.83px; top: 394.361px;">Idaho</div>
+<script>
+  $(function(){
+    var footerHeight = $("footer.premium-footer").length ? $("footer.premium-footer").outerHeight() : ($("footer.main-footer").length ? $("footer.main-footer").outerHeight() : 0);
+    var navHeight = $('#top-Nav').length ? $('#top-Nav').outerHeight() : 0;
+    var loginNavHeight = $('#login-nav').length ? $('#login-nav').outerHeight() : 0;
+    var minHeight = $(window).height() - navHeight - loginNavHeight - footerHeight;
+    $('.wrapper>.content-wrapper').css("min-height", minHeight > 0 ? minHeight : 'auto');
+  })
+</script>  </body>
+</html>

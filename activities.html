@@ -1,0 +1,581 @@
+ <!DOCTYPE html>
+<html lang="en" class="" style="height: auto;">
+<style>
+  #top-Nav a.nav-link.active {
+      font-weight: 900;
+      position: relative;
+  }
+  #top-Nav a.nav-link.active:before {
+    content: "";
+    position: absolute;
+    border-bottom: 2px solid var(--primary);
+    width: 33.33%;
+    left: 33.33%;
+    bottom: 0;
+    transition: border-color 0.4s ease;
+  }
+  body.nav-hidden #top-Nav a.nav-link.active:before {
+    border-bottom-color: #fff;
+  }
+</style>
+<head>
+  <style>
+    :root{
+      --bg-img:url('dist/img/no-image-available.png');
+    }
+  </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  	<title>Pasco Resort Management System</title>
+    <link rel="icon" href="dist/img/no-image-available.png" />
+    <!-- Google Font: Source Sans Pro -->
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&amp;display=fallback"> -->
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+    <!-- Ionicons -->
+    <!-- <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"> -->
+    <!-- Tempusdominus Bootstrap 4 -->
+    <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+      <!-- DataTables -->
+  <link rel="stylesheet" href="plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <link rel="stylesheet" href="plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+   <!-- Select2 -->
+  <link rel="stylesheet" href="plugins/select2/css/select2.min.css">
+  <link rel="stylesheet" href="plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <!-- JQVMap -->
+    <link rel="stylesheet" href="plugins/jqvmap/jqvmap.min.css">
+    <!-- fullCalendar -->
+    <link rel="stylesheet" href="plugins/fullcalendar/main.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="dist/css/adminlte.css">
+    <link rel="stylesheet" href="http://localhost:8888/resort/assets/css/styles.css">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
+    <!-- summernote -->
+    <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
+     <!-- SweetAlert2 -->
+  <link rel="stylesheet" href="plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+    <!-- Custom Style Redesign -->
+    <link rel="stylesheet" href="dist/css/custom.css">
+    <style type="text/css">/* Chart.js */
+      @keyframes chartjs-render-animation{from{opacity:.99}to{opacity:1}}.chartjs-render-monitor{animation:chartjs-render-animation 1ms}.chartjs-size-monitor,.chartjs-size-monitor-expand,.chartjs-size-monitor-shrink{position:absolute;direction:ltr;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1}.chartjs-size-monitor-expand>div{position:absolute;width:1000000px;height:1000000px;left:0;top:0}.chartjs-size-monitor-shrink>div{position:absolute;width:200%;height:200%;left:0;top:0}
+    </style>
+
+     <!-- jQuery -->
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+    <!-- SweetAlert2 -->
+    <script src="plugins/sweetalert2/sweetalert2.min.js"></script>
+    <!-- Toastr -->
+    <script src="plugins/toastr/toastr.min.js"></script>
+    <script>
+        var _base_url_ = 'http://localhost:8888/resort/';
+    </script>
+    <script src="dist/js/script.js"></script>
+    <style>
+    #main-header{
+        position:relative;
+        background: rgb(0,0,0)!important;
+        background: radial-gradient(circle, rgba(0,0,0,0.48503151260504207) 22%, rgba(0,0,0,0.39539565826330536) 49%, rgba(0,212,255,0) 100%)!important;
+    }
+    #main-header:before{
+        content:"";
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        background-image:url(uploads/cover.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: drop-shadow(0px 7px 6px black);
+        z-index:-1;
+    }
+
+ </style>
+  </head>  <body class="layout-top-nav layout-fixed layout-navbar-fixed " style="height: auto;">
+    <div class="wrapper">
+     <nav class="main-header navbar navbar-expand-lg navbar-light border-0 main-navbar" id="top-Nav">
+  <div class="container">
+    <a href="index.html" class="navbar-brand">
+      <img src="dist/img/no-image-available.png" alt="Site Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span>Pasco Resort</span>
+    </a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link ">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a href="rooms.html" class="nav-link ">Cuartos</a>
+        </li>
+        <li class="nav-item">
+          <a href="activities.html" class="nav-link active">Atracciones</a>
+        </li>
+        <li class="nav-item">
+          <a href="about.html" class="nav-link ">Nosotros</a>
+        </li>
+        <li class="nav-item">
+          <a href="contact_us.html" class="nav-link ">Contacto</a>
+        </li>
+              </ul>
+      <div class="d-flex align-items-center gap-2 nav-cta-wrap">
+                  <a href="rooms.html" class="btn btn-nav-cta"><i class="fas fa-calendar-check mr-1"></i> Reservar</a>
+          <a href="./admin" class="nav-admin-link"><i class="fa fa-user-shield"></i></a>
+              </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+$(function(){
+  var $body = $('body');
+  var scrollThreshold = $('.hero-carousel').length
+    ? $('.hero-carousel').outerHeight() * 0.6
+    : 120;
+
+  function updateNav() {
+    if ($(window).scrollTop() > scrollThreshold) {
+      $body.addClass('nav-hidden');
+    } else {
+      $body.removeClass('nav-hidden');
+    }
+  }
+
+  $(window).on('scroll', updateNav);
+  updateNav();
+});
+</script>         
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper" style="">
+        <!-- Main content -->
+        <section class="content ">
+            <!-- ===== PAGE HERO ===== -->
+<div class="page-hero" style="background-image: url('uploads/cerro_de_pasco/activity_huayllay.png');">
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content">
+        <h1>Atracciones & Actividades</h1>
+        <p>Explora las maravillas naturales y la riqueza cultural de la región Pasco</p>
+    </div>
+</div>
+
+<section class="container my-5 py-4">
+    <div class="text-center mb-5 scroll-reveal" id="activities-title-section">
+        <span style="color: var(--primary); font-family: var(--font-title); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; font-weight: bold;">Experiencias Increíbles</span>
+        <h2 class="my-2" style="font-size: 2.8rem;">Atracciones & Actividades</h2>
+        <p style="color: var(--text-muted);">Descubre las maravillas naturales y gastronómicas de la región andina.</p>
+    </div>
+
+    <div class="row">
+                <div class="col-md-4 mb-4 scroll-reveal activity-item-reveal">
+            <div class="activity-card h-100 d-flex flex-column">
+                <div class="activity-img-wrapper">
+                    <img src="uploads/cerro_de_pasco/activity_huayllay.png" alt="Aventura en Bosque de Huayllay">
+                </div>
+                <div class="activity-details d-flex flex-column flex-grow-1">
+                    <h3 style="font-size: 1.4rem; margin-bottom: 10px;">Aventura en Bosque de Huayllay</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;" class="flex-grow-1">
+                        Realiza un trekking guiado a través de las increíbles figuras de piedra volcánica en el Santuario Nacional de Huayllay.                    </p>
+                    <div class="mt-auto pt-3" style="border-top: 1px solid #eee; text-align: right;">
+                        <a href="javascript:void(0)" data-id="1" class="booking-btn view_activity" style="padding: 6px 16px; font-size: 0.85rem;">Ver Más</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+                <div class="col-md-4 mb-4 scroll-reveal activity-item-reveal">
+            <div class="activity-card h-100 d-flex flex-column">
+                <div class="activity-img-wrapper">
+                    <img src="uploads/cerro_de_pasco/activity_gastronomy.png" alt="Experiencia Pachamanca">
+                </div>
+                <div class="activity-details d-flex flex-column flex-grow-1">
+                    <h3 style="font-size: 1.4rem; margin-bottom: 10px;">Experiencia Pachamanca</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;" class="flex-grow-1">
+                        Disfruta de una cena Pachamanca tradicional cocinada bajo tierra con piedras calientes en el restaurante del resort.                    </p>
+                    <div class="mt-auto pt-3" style="border-top: 1px solid #eee; text-align: right;">
+                        <a href="javascript:void(0)" data-id="3" class="booking-btn view_activity" style="padding: 6px 16px; font-size: 0.85rem;">Ver Más</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+                <div class="col-md-4 mb-4 scroll-reveal activity-item-reveal">
+            <div class="activity-card h-100 d-flex flex-column">
+                <div class="activity-img-wrapper">
+                    <img src="uploads/cerro_de_pasco/activity_calera.png" alt="Termas de la Calera">
+                </div>
+                <div class="activity-details d-flex flex-column flex-grow-1">
+                    <h3 style="font-size: 1.4rem; margin-bottom: 10px;">Termas de la Calera</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;" class="flex-grow-1">
+                        Relájate y recupera energías en los Baños Termales curativos de La Calera rodeado de la naturaleza andina.                    </p>
+                    <div class="mt-auto pt-3" style="border-top: 1px solid #eee; text-align: right;">
+                        <a href="javascript:void(0)" data-id="2" class="booking-btn view_activity" style="padding: 6px 16px; font-size: 0.85rem;">Ver Más</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+            </div>
+</section>
+
+<!-- ===== GUÍA DE ECOTURISMO Y CONSEJOS ===== -->
+<section class="py-5" style="background: var(--bg-section); border-radius: var(--radius-lg); margin-bottom: 50px;">
+    <div class="container text-center">
+        <span style="color: var(--primary); font-family: var(--font-title); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; font-weight: bold;">Exploración Consciente</span>
+        <h2 class="section-title my-2" style="font-size: 2.2rem;">Guía de Aventura en los Andes de Pasco</h2>
+        <p style="color: var(--text-muted); max-width: 650px; margin: 0 auto 30px;">Planifique su salida perfecta a las maravillas naturales que rodean nuestro resort. Le brindamos recomendaciones indispensables para una exploración segura y memorable.</p>
+        <hr class="section-divider mb-5">
+        <div class="row text-left">
+            <div class="col-md-6 mb-4">
+                <div class="p-4" style="background: #fff; border-radius: var(--radius); box-shadow: var(--shadow-sm); border: 1px solid var(--border-light); height: 100%;">
+                    <h5 class="text-navy mb-3" style="font-weight: 700;"><i class="fas fa-hiking" style="margin-right: 8px;"></i> Senderismo en Huayllay</h5>
+                    <p style="font-size: 0.92rem; line-height: 1.7; color: var(--text-muted);">
+                        El Bosque de Piedras de Huayllay es una maravilla geológica a 4,000 metros de altura. Contamos con guías locales certificados y equipamiento básico (bastones de trekking, mapas de senderos y mochilas de marcha). Se recomienda iniciar las caminatas a primeras horas de la mañana (7:00 a.m.) para disfrutar del cielo despejado y evitar vientos fuertes vespertinos.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="p-4" style="background: #fff; border-radius: var(--radius); box-shadow: var(--shadow-sm); border: 1px solid var(--border-light); height: 100%;">
+                    <h5 class="text-navy mb-3" style="font-weight: 700;"><i class="fas fa-tshirt" style="margin-right: 8px;"></i> Vestimenta Recomendada</h5>
+                    <p style="font-size: 0.92rem; line-height: 1.7; color: var(--text-muted);">
+                        El clima altoandino es sumamente cambiante. Sugerimos vestirse en capas: una primera capa transpirable, un abrigo de fibra térmica o forro polar, y una chaqueta cortaviento impermeable. No olvide calzado de montaña con buen agarre, gorro térmico, lentes con protección UV y bloqueador solar de factor alto.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="p-4" style="background: #fff; border-radius: var(--radius); box-shadow: var(--shadow-sm); border: 1px solid var(--border-light); height: 100%;">
+                    <h5 class="text-navy mb-3" style="font-weight: 700;"><i class="fas fa-camera-retro" style="margin-right: 8px;"></i> Fotografía y Ecoturismo</h5>
+                    <p style="font-size: 0.92rem; line-height: 1.7; color: var(--text-muted);">
+                        Las formaciones rocosas de Huayllay que emulan perfiles humanos y animales son idóneas para los entusiastas de la fotografía. Respete siempre la flora y fauna local: no dañe los líquenes de las rocas y mantenga distancia de los rebaños de alpacas y vicuñas salvajes. Recuerde regresar toda su basura al resort.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="p-4" style="background: #fff; border-radius: var(--radius); box-shadow: var(--shadow-sm); border: 1px solid var(--border-light); height: 100%;">
+                    <h5 class="text-navy mb-3" style="font-weight: 700;"><i class="fas fa-heart" style="margin-right: 8px;"></i> Aguas Termales de La Calera</h5>
+                    <p style="font-size: 0.92rem; line-height: 1.7; color: var(--text-muted);">
+                        Ubicadas a pocos minutos de Huayllay, sus piscinas naturales y medicinales alcanzan temperaturas de hasta 60°C. Es el complemento perfecto después de un día de senderismo. Ricas en calcio, potasio y magnesio, son reconocidas por aliviar dolores articulares y musculares, además de inducir un sueño profundo.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const titleSec = document.querySelector("#activities-title-section");
+        const items = document.querySelectorAll(".activity-item-reveal");
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    observer.unobserve(entry.target); // Dejar de observar una vez visible
+                }
+            });
+        }, { threshold: 0.1 });
+
+        if(titleSec) observer.observe(titleSec);
+        items.forEach(item => observer.observe(item));
+
+        // Clic para abrir el modal
+        $('.view_activity').click(function(){
+            uni_modal("Atracción", 'view_activity.php?id=' + $(this).attr('data-id'), 'mid-large');
+        });
+    });
+</script>        </section>
+        <!-- /.content -->
+  <!-- Modals con Glassmorphism -->
+  <div class="modal fade" id="confirm_modal" role='dialog'>
+    <div class="modal-dialog modal-md modal-dialog-centered" role="document">
+      <div class="modal-content glass-modal">
+        <div class="modal-header">
+        <h5 class="modal-title">Confirmación</h5>
+      </div>
+      <div class="modal-body">
+        <div id="delete_content"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" id='confirm' onclick="">Continuar</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+      </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="uni_modal" role='dialog'>
+    <div class="modal-dialog modal-md modal-dialog-centered" role="document">
+      <div class="modal-content glass-modal">
+        <div class="modal-header">
+        <h5 class="modal-title"></h5>
+      </div>
+      <div class="modal-body">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" id='submit' onclick="$('#uni_modal form').submit()">Guardar</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+      </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="uni_modal_right" role='dialog'>
+    <div class="modal-dialog modal-full-height modal-md" role="document">
+      <div class="modal-content glass-modal">
+        <div class="modal-header">
+        <h5 class="modal-title"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span class="fa fa-arrow-right"></span>
+        </button>
+      </div>
+      <div class="modal-body">
+      </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="viewer_modal" role='dialog'>
+    <div class="modal-dialog modal-md" role="document">
+      <div class="modal-content glass-modal-dark">
+              <button type="button" class="btn-close" data-dismiss="modal"><span class="fa fa-times"></span></button>
+              <img src="" alt="">
+      </div>
+    </div>
+  </div>
+      </div>
+      <!-- /.content-wrapper -->
+      <script>
+  $(document).ready(function(){
+    $('.list-group').each(function(){
+      if(String($(this).html()).trim() == ""){
+        $(this).html("")
+      }
+    })
+    
+     window.viewer_modal = function($src = ''){
+      start_loader()
+      var t = $src.split('.')
+      t = t[1]
+      if(t =='mp4'){
+        var view = $("<video src='"+$src+"' controls autoplay></video>")
+      }else{
+        var view = $("<img src='"+$src+"' />")
+      }
+      $('#viewer_modal .modal-content video,#viewer_modal .modal-content img').remove()
+      $('#viewer_modal .modal-content').append(view)
+      $('#viewer_modal').modal({
+              show:true,
+              backdrop:'static',
+              keyboard:false,
+              focus:true
+            })
+            end_loader()  
+
+  }
+    window.uni_modal = function($title = '' , $url='',$size=""){
+        start_loader()
+        $.ajax({
+            url:$url,
+            error:err=>{
+                console.log()
+                alert("An error occured")
+            },
+            success:function(resp){
+                if(resp){
+                    $('#uni_modal .modal-title').html($title)
+                    $('#uni_modal .modal-body').html(resp)
+                    if($size != ''){
+                        $('#uni_modal .modal-dialog').addClass($size+'  modal-dialog-centered')
+                    }else{
+                        $('#uni_modal .modal-dialog').removeAttr("class").addClass("modal-dialog modal-md modal-dialog-centered")
+                    }
+                    $('#uni_modal').modal({
+                      show:true,
+                      backdrop:'static',
+                      keyboard:false,
+                      focus:true
+                    })
+                    end_loader()
+                }
+            }
+        })
+    }
+    window._conf = function($msg='',$func='',$params = []){
+       $('#confirm_modal #confirm').attr('onclick',$func+"("+$params.join(',')+")")
+       $('#confirm_modal .modal-body').html($msg)
+       $('#confirm_modal').modal('show')
+    }
+  })
+</script>
+<!-- ===== SINGLE PUBLIC FOOTER for ALL pages ===== -->
+<footer class="main-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="d-flex align-items-center mb-3">
+                    <img src="dist/img/no-image-available.png" alt="Logo" style="height: 50px; width: 50px; object-fit: cover; border-radius: 50%; margin-right: 12px; border: 2px solid rgba(251,191,36,0.3);">
+                    <h5 class="mb-0" style="font-size: 1.2rem; color: #fff;">Pasco Resort Management System</h5>
+                </div>
+                <p style="font-size: 0.9rem; line-height: 1.8; color: rgba(255,255,255,0.6);">
+                    Tu refugio exclusivo en la altura de Cerro de Pasco. Ofrecemos calidez, tradición y confort con los más altos estándares de hospitalidad andina.
+                </p>
+                <div class="mt-3 d-flex" style="gap: 8px;">
+                    <a href="#" class="social-icon facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon tiktok" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" class="social-icon whatsapp" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h5>Enlaces</h5>
+                <ul class="pl-0 footer-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="rooms.html">Habitaciones</a></li>
+                    <li><a href="activities.html">Atracciones</a></li>
+                    <li><a href="about.html">Nosotros</a></li>
+                    <li><a href="contact_us.html">Contacto</a></li>
+                </ul>
+                <h5 class="mt-4" style="font-size: 0.9rem;">Servicios</h5>
+                <ul class="pl-0 footer-links">
+                    <li><a href="rooms.html">Alojamiento</a></li>
+                    <li><a href="activities.html">Restaurante</a></li>
+                    <li><a href="activities.html">Spa & Bienestar</a></li>
+                    <li><a href="activities.html">Excursiones</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <h5>Contacto</h5>
+                <ul class="pl-0 footer-contact">
+                    <li><i class="fas fa-map-marker-alt"></i> <span>123 Ocean Drive, Sunny Beach, FL 33139</span></li>
+                    <li><i class="fas fa-phone-alt"></i> <span>+1 (555) 019-9234</span></li>
+                    <li><i class="fas fa-envelope"></i> <span>contact@paradiseresort.com</span></li>
+                    <li><i class="fab fa-whatsapp"></i> <span>+1 (555) 019-9234</span></li>
+                </ul>
+                <h5 class="mt-4" style="font-size: 0.9rem;">Horario de Atención</h5>
+                <ul class="pl-0 footer-hours">
+                    <li><span>Recepción:</span> <span class="float-right">24 horas</span></li>
+                    <li><span>Restaurante:</span> <span class="float-right">7:00 - 22:00</span></li>
+                    <li><span>Spa:</span> <span class="float-right">9:00 - 20:00</span></li>
+                    <li><span>Check-in / Check-out:</span> <span class="float-right">15:00 / 12:00</span></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <h5>Reservaciones</h5>
+                <p style="font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.8;">
+                    ¿Listo para vivir la experiencia andina? Reserva directamente y obtén las mejores tarifas garantizadas.
+                </p>
+                <a href="rooms.html" class="btn-accent" style="font-size:0.85rem;padding:10px 24px;display:inline-block;text-decoration:none;">
+                    <i class="fas fa-calendar-check mr-1"></i> Reservar Ahora
+                </a>
+                <div class="mt-4 p-3" style="background: rgba(255,255,255,0.05); border-radius: 8px; border: 1px solid rgba(255,255,255,0.08);">
+                    <p style="font-size: 0.8rem; color: rgba(255,255,255,0.5); margin: 0; line-height: 1.6;">
+                        <i class="fas fa-shield-alt" style="color: #A16207; margin-right: 6px;"></i>
+                        Pago 100% seguro con encriptación SSL
+                    </p>
+                    <div class="mt-2 d-flex" style="gap: 8px;">
+                        <span style="font-size: 1.4rem; color: rgba(255,255,255,0.3);"><i class="fab fa-cc-visa"></i></span>
+                        <span style="font-size: 1.4rem; color: rgba(255,255,255,0.3);"><i class="fab fa-cc-mastercard"></i></span>
+                        <span style="font-size: 1.4rem; color: rgba(255,255,255,0.3);"><i class="fab fa-cc-amex"></i></span>
+                        <span style="font-size: 1.4rem; color: rgba(255,255,255,0.3);"><i class="fab fa-cc-paypal"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="row align-items-center">
+                <div class="col-md-4 text-center text-md-left mb-2 mb-md-0">
+                    &copy; 2026 Pasco Resort Management System. Todos los derechos reservados. Desarrollado por AltumTech.
+                </div>
+                <div class="col-md-4 text-center mb-2 mb-md-0">
+                    <a href="#" style="color: rgba(255,255,255,0.4); font-size: 0.8rem; margin: 0 8px;">Términos</a>
+                    <span style="color: rgba(255,255,255,0.2);">|</span>
+                    <a href="#" style="color: rgba(255,255,255,0.4); font-size: 0.8rem; margin: 0 8px;">Privacidad</a>
+                    <span style="color: rgba(255,255,255,0.2);">|</span>
+                    <a href="#" style="color: rgba(255,255,255,0.4); font-size: 0.8rem; margin: 0 8px;">Cookies</a>
+                </div>
+                <div class="col-md-4 text-center text-md-right">
+                    <small style="color: rgba(255,255,255,0.35); font-size: 0.8rem;">
+                        Esta página fue hecha por AltumTech, derechos reservados.
+                    </small>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+    </div>
+    <!-- ./wrapper -->
+<div id="libraries">
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+      $.widget.bridge('uibutton', $.ui.button)
+    </script>
+    <!-- Bootstrap 4 -->
+    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- ChartJS -->
+    <script src="plugins/chart.js/Chart.min.js"></script>
+    <!-- Sparkline -->
+    <script src="plugins/sparklines/sparkline.js"></script>
+    <!-- Select2 -->
+    <script src="plugins/select2/js/select2.full.min.js"></script>
+    <!-- JQVMap -->
+    <script src="plugins/jqvmap/jquery.vmap.min.js"></script>
+    <script src="plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+    <!-- jQuery Knob Chart -->
+    <script src="plugins/jquery-knob/jquery.knob.min.js"></script>
+    <!-- daterangepicker -->
+    <script src="plugins/moment/moment.min.js"></script>
+    <script src="plugins/daterangepicker/daterangepicker.js"></script>
+    <!-- Tempusdominus Bootstrap 4 -->
+    <script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+    <!-- Summernote -->
+    <script src="plugins/summernote/summernote-bs4.min.js"></script>
+    <script src="plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+    <script src="plugins/moment/moment.min.js"></script>
+    <script src="plugins/fullcalendar/main.js"></script>
+    <!-- overlayScrollbars -->
+    <!-- <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script> -->
+    <!-- AdminLTE App -->
+    <script src="dist/js/adminlte.js"></script>
+  </div>   
+    <div class="daterangepicker ltr show-ranges opensright">
+      <div class="ranges">
+        <ul>
+          <li data-range-key="Today">Today</li>
+          <li data-range-key="Yesterday">Yesterday</li>
+          <li data-range-key="Last 7 Days">Last 7 Days</li>
+          <li data-range-key="Last 30 Days">Last 30 Days</li>
+          <li data-range-key="This Month">This Month</li>
+          <li data-range-key="Last Month">Last Month</li>
+          <li data-range-key="Custom Range">Custom Range</li>
+        </ul>
+      </div>
+      <div class="drp-calendar left">
+        <div class="calendar-table"></div>
+        <div class="calendar-time" style="display: none;"></div>
+      </div>
+      <div class="drp-calendar right">
+        <div class="calendar-table"></div>
+        <div class="calendar-time" style="display: none;"></div>
+      </div>
+      <div class="drp-buttons"><span class="drp-selected"></span><button class="cancelBtn btn btn-sm btn-default" type="button">Cancel</button><button class="applyBtn btn btn-sm btn-primary" disabled="disabled" type="button">Apply</button> </div>
+    </div>
+    <div class="jqvmap-label" style="display: none; left: 1093.83px; top: 394.361px;">Idaho</div>
+<script>
+  $(function(){
+    var footerHeight = $("footer.premium-footer").length ? $("footer.premium-footer").outerHeight() : ($("footer.main-footer").length ? $("footer.main-footer").outerHeight() : 0);
+    var navHeight = $('#top-Nav').length ? $('#top-Nav').outerHeight() : 0;
+    var loginNavHeight = $('#login-nav').length ? $('#login-nav').outerHeight() : 0;
+    var minHeight = $(window).height() - navHeight - loginNavHeight - footerHeight;
+    $('.wrapper>.content-wrapper').css("min-height", minHeight > 0 ? minHeight : 'auto');
+  })
+</script>  </body>
+</html>
