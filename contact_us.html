@@ -238,11 +238,43 @@ $(function(){
                 <p style="font-size: 0.88rem; line-height: 1.7; color: var(--text-muted); margin-bottom: 15px;">
                     Esta plataforma y software de reservación fue desarrollado a medida por <strong>AltumTech</strong>. Diseñamos páginas web de alto impacto y software a medida para impulsar tu negocio.
                 </p>
-                <div class="p-1 mb-3" style="background: rgba(0,0,0,0.03); border-radius: 8px; border: 1px solid rgba(0,0,0,0.06); overflow: hidden;">
-                    <video class="w-100 rounded" controls poster="dist/img/no-image-available.png" style="border-radius: 6px !important; outline: none; max-height: 180px;">
-                        <source src="dist/img/altumtech_promo.mp4" type="video/mp4">
+                <div class="d-flex justify-content-center mb-2" style="gap: 10px;">
+                    <button type="button" class="btn btn-xs btn-outline-primary active" id="btn-vid-horizontal" onclick="switchVideo('dist/img/altumtech_promo.mp4', '180px', this)" style="font-size: 0.75rem; padding: 3px 10px; border-radius: 12px; border: 1px solid var(--primary); background: transparent; color: var(--primary);">Horizontal</button>
+                    <button type="button" class="btn btn-xs btn-outline-primary" id="btn-vid-vertical" onclick="switchVideo('dist/img/tiktok_promo.mp4', '320px', this)" style="font-size: 0.75rem; padding: 3px 10px; border-radius: 12px; border: 1px solid var(--primary); background: transparent; color: var(--primary);">TikTok 9:16</button>
+                </div>
+                <div class="p-1 mb-3" style="background: rgba(0,0,0,0.03); border-radius: 8px; border: 1px solid rgba(0,0,0,0.06); overflow: hidden; text-align: center;">
+                    <video id="altumtech-video-player" class="w-100 rounded" controls style="border-radius: 6px !important; outline: none; max-height: 180px; transition: max-height 0.3s ease;">
+                        <source id="video-source" src="dist/img/altumtech_promo.mp4" type="video/mp4">
                     </video>
                 </div>
+                <script>
+                function switchVideo(src, height, btn) {
+                    var video = document.getElementById('altumtech-video-player');
+                    
+                    // Remover clase active y estilos previos
+                    var btnH = document.getElementById('btn-vid-horizontal');
+                    var btnV = document.getElementById('btn-vid-vertical');
+                    
+                    btnH.style.background = 'transparent';
+                    btnH.style.color = 'var(--primary)';
+                    btnV.style.background = 'transparent';
+                    btnV.style.color = 'var(--primary)';
+                    
+                    // Colorear el boton activo
+                    btn.style.background = 'var(--primary)';
+                    btn.style.color = '#fff';
+                    
+                    // Cambiar altura del contenedor para formato vertical
+                    video.style.maxHeight = height;
+                    
+                    // Recargar el recurso de video
+                    video.src = src;
+                    video.load();
+                }
+                // Inicializar boton activo
+                document.getElementById('btn-vid-horizontal').style.background = 'var(--primary)';
+                document.getElementById('btn-vid-horizontal').style.color = '#fff';
+                </script>
                 <div class="text-center">
                     <a href="https://altumtech-pasco.onrender.com" target="_blank" class="btn-cta-accent w-100 d-block" style="font-size: 0.85rem; padding: 10px 18px; text-decoration: none;">
                         <i class="fas fa-external-link-alt mr-2"></i>Visitar AltumTech
