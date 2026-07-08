@@ -228,43 +228,71 @@ $(function(){
 
 <!-- ===== GUÍA DE ECOTURISMO Y CONSEJOS ===== -->
 <section class="py-5" style="background: var(--bg-section); border-radius: var(--radius-lg); margin-bottom: 50px;">
-    <div class="container text-center">
-        <span style="color: var(--primary); font-family: var(--font-title); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; font-weight: bold;">Exploración Consciente</span>
-        <h2 class="section-title my-2" style="font-size: 2.2rem;">Guía de Aventura en los Andes de Pasco</h2>
-        <p style="color: var(--text-muted); max-width: 650px; margin: 0 auto 30px;">Planifique su salida perfecta a las maravillas naturales que rodean nuestro resort. Le brindamos recomendaciones indispensables para una exploración segura y memorable.</p>
-        <hr class="section-divider mb-5">
-        <div class="row text-left">
-            <div class="col-md-6 mb-4">
-                <div class="p-4" style="background: #fff; border-radius: var(--radius); box-shadow: var(--shadow-sm); border: 1px solid var(--border-light); height: 100%;">
-                    <h5 class="text-navy mb-3" style="font-weight: 700;"><i class="fas fa-hiking" style="margin-right: 8px;"></i> Senderismo en Huayllay</h5>
-                    <p style="font-size: 0.92rem; line-height: 1.7; color: var(--text-muted);">
-                        El Bosque de Piedras de Huayllay es una maravilla geológica a 4,000 metros de altura. Contamos con guías locales certificados y equipamiento básico (bastones de trekking, mapas de senderos y mochilas de marcha). Se recomienda iniciar las caminatas a primeras horas de la mañana (7:00 a.m.) para disfrutar del cielo despejado y evitar vientos fuertes vespertinos.
-                    </p>
-                </div>
+    <div class="container">
+        <div class="text-center mb-5">
+            <span style="color: var(--primary); font-family: var(--font-title); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; font-weight: bold;">Exploración Consciente</span>
+            <h2 class="section-title my-2" style="font-size: 2.2rem;">Guía de Aventura en los Andes de Pasco</h2>
+            <p style="color: var(--text-muted); max-width: 650px; margin: 0 auto;">Planifique su salida perfecta a las maravillas naturales que rodean nuestro resort. Le brindamos recomendaciones indispensables para una exploración segura y memorable.</p>
+            <hr class="section-divider">
+        </div>
+        
+        <!-- Guía 1: Senderismo (Texto Izquierda, Imagen Derecha) -->
+        <div class="row align-items-center mb-5 py-2">
+            <div class="col-md-6 mb-3 mb-md-0">
+                <h5 class="text-navy mb-3" style="font-family: var(--font-title); font-weight: 700; font-size: 1.4rem;">
+                    <i class="fas fa-hiking" style="margin-right: 8px; color: var(--primary);"></i> Senderismo en Huayllay
+                </h5>
+                <p style="font-size: 1.02rem; line-height: 1.8; color: var(--text-muted);">
+                    El Bosque de Piedras de Huayllay es una maravilla geológica a 4,000 metros de altura. Contamos con guías locales certificados y equipamiento básico (bastones de trekking, mapas de senderos y mochilas de marcha). Se recomienda iniciar las caminatas a primeras horas de la mañana (7:00 a.m.) para disfrutar del cielo despejado y evitar vientos fuertes vespertinos.
+                </p>
             </div>
-            <div class="col-md-6 mb-4">
-                <div class="p-4" style="background: #fff; border-radius: var(--radius); box-shadow: var(--shadow-sm); border: 1px solid var(--border-light); height: 100%;">
-                    <h5 class="text-navy mb-3" style="font-weight: 700;"><i class="fas fa-tshirt" style="margin-right: 8px;"></i> Vestimenta Recomendada</h5>
-                    <p style="font-size: 0.92rem; line-height: 1.7; color: var(--text-muted);">
-                        El clima altoandino es sumamente cambiante. Sugerimos vestirse en capas: una primera capa transpirable, un abrigo de fibra térmica o forro polar, y una chaqueta cortaviento impermeable. No olvide calzado de montaña con buen agarre, gorro térmico, lentes con protección UV y bloqueador solar de factor alto.
-                    </p>
-                </div>
+            <div class="col-md-6">
+                <img src="uploads/cerro_de_pasco/activity_huayllay.png" class="img-fluid rounded shadow-md" alt="Senderismo" style="border-radius: var(--radius-lg) !important; width: 100%; max-height: 300px; object-fit: cover;">
             </div>
-            <div class="col-md-6 mb-4">
-                <div class="p-4" style="background: #fff; border-radius: var(--radius); box-shadow: var(--shadow-sm); border: 1px solid var(--border-light); height: 100%;">
-                    <h5 class="text-navy mb-3" style="font-weight: 700;"><i class="fas fa-camera-retro" style="margin-right: 8px;"></i> Fotografía y Ecoturismo</h5>
-                    <p style="font-size: 0.92rem; line-height: 1.7; color: var(--text-muted);">
-                        Las formaciones rocosas de Huayllay que emulan perfiles humanos y animales son idóneas para los entusiastas de la fotografía. Respete siempre la flora y fauna local: no dañe los líquenes de las rocas y mantenga distancia de los rebaños de alpacas y vicuñas salvajes. Recuerde regresar toda su basura al resort.
-                    </p>
-                </div>
+        </div>
+
+        <!-- Guía 2: Vestimenta (Imagen Izquierda, Texto Derecha) -->
+        <div class="row align-items-center mb-5 py-2 flex-column-reverse flex-md-row">
+            <div class="col-md-6">
+                <img src="uploads/cerro_de_pasco/carousel_exterior.png" class="img-fluid rounded shadow-md" alt="Vestimenta" style="border-radius: var(--radius-lg) !important; width: 100%; max-height: 300px; object-fit: cover;">
             </div>
-            <div class="col-md-6 mb-4">
-                <div class="p-4" style="background: #fff; border-radius: var(--radius); box-shadow: var(--shadow-sm); border: 1px solid var(--border-light); height: 100%;">
-                    <h5 class="text-navy mb-3" style="font-weight: 700;"><i class="fas fa-heart" style="margin-right: 8px;"></i> Aguas Termales de La Calera</h5>
-                    <p style="font-size: 0.92rem; line-height: 1.7; color: var(--text-muted);">
-                        Ubicadas a pocos minutos de Huayllay, sus piscinas naturales y medicinales alcanzan temperaturas de hasta 60°C. Es el complemento perfecto después de un día de senderismo. Ricas en calcio, potasio y magnesio, son reconocidas por aliviar dolores articulares y musculares, además de inducir un sueño profundo.
-                    </p>
-                </div>
+            <div class="col-md-6 mb-3 mb-md-0">
+                <h5 class="text-navy mb-3" style="font-family: var(--font-title); font-weight: 700; font-size: 1.4rem;">
+                    <i class="fas fa-tshirt" style="margin-right: 8px; color: var(--primary);"></i> Vestimenta Recomendada
+                </h5>
+                <p style="font-size: 1.02rem; line-height: 1.8; color: var(--text-muted);">
+                    El clima altoandino es sumamente cambiante. Sugerimos vestirse en capas: una primera capa transpirable, un abrigo de fibra térmica o forro polar, y una chaqueta cortaviento impermeable. No olvide calzado de montaña con buen agarre, gorro térmico, lentes con protección UV y bloqueador solar de factor alto.
+                </p>
+            </div>
+        </div>
+
+        <!-- Guía 3: Fotografía (Texto Izquierda, Imagen Derecha) -->
+        <div class="row align-items-center mb-5 py-2">
+            <div class="col-md-6 mb-3 mb-md-0">
+                <h5 class="text-navy mb-3" style="font-family: var(--font-title); font-weight: 700; font-size: 1.4rem;">
+                    <i class="fas fa-camera-retro" style="margin-right: 8px; color: var(--primary);"></i> Fotografía y Ecoturismo
+                </h5>
+                <p style="font-size: 1.02rem; line-height: 1.8; color: var(--text-muted);">
+                    Las formaciones rocosas de Huayllay que emulan perfiles humanos y animales son idóneas para los entusiastas de la fotografía. Respete siempre la flora y fauna local: no dañe los líquenes de las rocas y mantenga distancia de los rebaños de alpacas y vicuñas salvajes. Recuerde regresar toda su basura al resort.
+                </p>
+            </div>
+            <div class="col-md-6">
+                <img src="uploads/cerro_de_pasco/activity_gastronomy.png" class="img-fluid rounded shadow-md" alt="Ecoturismo" style="border-radius: var(--radius-lg) !important; width: 100%; max-height: 300px; object-fit: cover;">
+            </div>
+        </div>
+
+        <!-- Guía 4: Aguas Termales (Imagen Izquierda, Texto Derecha) -->
+        <div class="row align-items-center flex-column-reverse flex-md-row">
+            <div class="col-md-6">
+                <img src="uploads/cerro_de_pasco/activity_calera.png" class="img-fluid rounded shadow-md" alt="Termas" style="border-radius: var(--radius-lg) !important; width: 100%; max-height: 300px; object-fit: cover;">
+            </div>
+            <div class="col-md-6 mb-3 mb-md-0">
+                <h5 class="text-navy mb-3" style="font-family: var(--font-title); font-weight: 700; font-size: 1.4rem;">
+                    <i class="fas fa-heart" style="margin-right: 8px; color: var(--primary);"></i> Aguas Termales de La Calera
+                </h5>
+                <p style="font-size: 1.02rem; line-height: 1.8; color: var(--text-muted);">
+                    Ubicadas a pocos minutos de Huayllay, sus piscinas naturales y medicinales alcanzan temperaturas de hasta 60°C. Es el complemento perfecto después de un día de senderismo. Ricas en calcio, potasio y magnesio, son reconocidas por aliviar dolores musculares y articulares, además de inducir un sueño profundo.
+                </p>
             </div>
         </div>
     </div>

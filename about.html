@@ -188,37 +188,62 @@ $(function(){
 
 <!-- ===== MISIÓN, VISIÓN, VALORES ===== -->
 <section class="py-5 scroll-reveal" id="values-section" style="background: var(--bg-section);">
-    <div class="container text-center">
-        <span class="section-subtitle">Nuestra Filosofía</span>
-        <h2 class="section-title">Misión, Visión & Valores</h2>
-        <hr class="section-divider mb-5">
-        <div class="row mt-4">
-            <div class="col-md-4 mb-4">
-                <div class="value-card h-100">
-                    <div class="value-icon"><i class="fas fa-bullseye"></i></div>
-                    <h4>Misión</h4>
-                    <p>Brindar una experiencia de hospedaje única en la región andina, combinando confort moderno con la calidez de la tradición peruana, superando las expectativas de cada huésped a través de un servicio personalizado y auténtico.</p>
+    <div class="container">
+        <div class="text-center mb-5">
+            <span class="section-subtitle">Nuestra Filosofía</span>
+            <h2 class="section-title">Misión, Visión & Valores</h2>
+            <hr class="section-divider">
+        </div>
+        
+        <!-- Fila 1: Misión (Texto Izquierda, Imagen Derecha) -->
+        <div class="row align-items-center mb-5 py-2">
+            <div class="col-md-6 mb-4 mb-md-0">
+                <div class="d-flex align-items-center mb-3">
+                    <div style="font-size: 2rem; color: var(--primary); margin-right: 15px;"><i class="fas fa-bullseye"></i></div>
+                    <h3 class="mb-0" style="font-family: var(--font-title); font-weight: 700; color: var(--text-heading); font-size: 1.6rem;">Misión</h3>
                 </div>
+                <p style="font-size: 1.05rem; line-height: 1.8; color: var(--text-muted);">
+                    Brindar una experiencia de hospedaje única en la región andina, combinando confort moderno con la calidez de la tradición peruana, superando las expectativas de cada huésped a través de un servicio personalizado y auténtico.
+                </p>
             </div>
-            <div class="col-md-4 mb-4">
-                <div class="value-card h-100">
-                    <div class="value-icon"><i class="fas fa-eye"></i></div>
-                    <h4>Visión</h4>
-                    <p>Ser el hotel referente de turismo sostenible en la región Pasco, reconocido por nuestra excelencia en el servicio, nuestra conexión con la cultura local y nuestro compromiso con la preservación del patrimonio natural y cultural de los Andes.</p>
-                </div>
+            <div class="col-md-6">
+                <img src="uploads/cerro_de_pasco/carousel_exterior.png" class="img-fluid rounded shadow-md" alt="Misión" style="border-radius: var(--radius-lg) !important; width: 100%; max-height: 300px; object-fit: cover;">
             </div>
-            <div class="col-md-4 mb-4">
-                <div class="value-card h-100">
-                    <div class="value-icon"><i class="fas fa-heart"></i></div>
-                    <h4>Valores</h4>
-                    <ul>
-                        <li><strong>Calidez Andina:</strong> Recibimos a cada huésped como familia.</li>
-                        <li><strong>Tradición:</strong> Preservamos y honramos nuestras raíces culturales.</li>
-                        <li><strong>Compromiso:</strong> Con nuestros huéspedes, colaboradores y comunidad.</li>
-                        <li><strong>Sostenibilidad:</strong> Cuidamos el medio ambiente y promovemos el turismo responsable.</li>
-                        <li><strong>Excelencia:</strong> Buscamos la mejora continua en cada detalle.</li>
-                    </ul>
+        </div>
+
+        <!-- Fila 2: Visión (Imagen Izquierda, Texto Derecha) -->
+        <div class="row align-items-center mb-5 py-2 flex-column-reverse flex-md-row">
+            <div class="col-md-6">
+                <img src="uploads/cerro_de_pasco/carousel_lobby.png" class="img-fluid rounded shadow-md" alt="Visión" style="border-radius: var(--radius-lg) !important; width: 100%; max-height: 300px; object-fit: cover;">
+            </div>
+            <div class="col-md-6 mb-4 mb-md-0">
+                <div class="d-flex align-items-center mb-3">
+                    <div style="font-size: 2rem; color: var(--primary); margin-right: 15px;"><i class="fas fa-eye"></i></div>
+                    <h3 class="mb-0" style="font-family: var(--font-title); font-weight: 700; color: var(--text-heading); font-size: 1.6rem;">Visión</h3>
                 </div>
+                <p style="font-size: 1.05rem; line-height: 1.8; color: var(--text-muted);">
+                    Ser el hotel referente de turismo sostenible en la región Pasco, reconocido por nuestra excelencia en el servicio, nuestra conexión con la cultura local y nuestro compromiso con la preservación del patrimonio natural y cultural de los Andes.
+                </p>
+            </div>
+        </div>
+
+        <!-- Fila 3: Valores (Texto Izquierda, Imagen Derecha) -->
+        <div class="row align-items-center py-2">
+            <div class="col-md-6 mb-4 mb-md-0">
+                <div class="d-flex align-items-center mb-3">
+                    <div style="font-size: 2rem; color: var(--primary); margin-right: 15px;"><i class="fas fa-heart"></i></div>
+                    <h3 class="mb-0" style="font-family: var(--font-title); font-weight: 700; color: var(--text-heading); font-size: 1.6rem;">Valores</h3>
+                </div>
+                <ul style="font-size: 1.02rem; line-height: 1.9; color: var(--text-muted); list-style-type: none; padding-left: 0;">
+                    <li class="mb-2"><i class="fas fa-star" style="color: var(--accent); margin-right: 8px; font-size: 0.85rem;"></i><strong>Calidez Andina:</strong> Recibimos a cada huésped como familia.</li>
+                    <li class="mb-2"><i class="fas fa-star" style="color: var(--accent); margin-right: 8px; font-size: 0.85rem;"></i><strong>Tradición:</strong> Preservamos y honramos nuestras raíces culturales.</li>
+                    <li class="mb-2"><i class="fas fa-star" style="color: var(--accent); margin-right: 8px; font-size: 0.85rem;"></i><strong>Compromiso:</strong> Con nuestros huéspedes, colaboradores y comunidad.</li>
+                    <li class="mb-2"><i class="fas fa-star" style="color: var(--accent); margin-right: 8px; font-size: 0.85rem;"></i><strong>Sostenibilidad:</strong> Cuidamos el medio ambiente y promovemos el turismo responsable.</li>
+                    <li class="mb-2"><i class="fas fa-star" style="color: var(--accent); margin-right: 8px; font-size: 0.85rem;"></i><strong>Excelencia:</strong> Buscamos la mejora continua en cada detalle.</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <img src="uploads/cerro_de_pasco/carousel_restaurant.png" class="img-fluid rounded shadow-md" alt="Valores" style="border-radius: var(--radius-lg) !important; width: 100%; max-height: 300px; object-fit: cover;">
             </div>
         </div>
     </div>
